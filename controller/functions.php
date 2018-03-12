@@ -2,6 +2,20 @@
     include 'modele/connectDB.php';
     $bdd = connectDB();
 
+    function createUser($bdd){
+        $log = $_POST['mail'];
+        $pwd = $_POST['password'];
+        $reponse = $bdd->query("SELECT mail FROM user WHERE mail");
+        $donnees = $response->fetch();
+
+        if ($donnees['mail'] == $log){
+            echo "Mail déjà utilisé";
+        } else {
+            $newUser = "INSERT INTO user(mail, mdp) VALUES ('$log', '$pwd')";
+            $bdd->exec($newUser);
+        }
+    }
+
     function logIn(){
         $log = $_POST['mail'];
         $pwd = $_POST['password'];
