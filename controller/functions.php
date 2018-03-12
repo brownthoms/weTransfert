@@ -1,5 +1,5 @@
 <?php
-    include '../modele/connectDB.php';
+    include 'modele/connectDB.php';
 
     function logIn(){
         $log = $_POST['mail'];
@@ -33,9 +33,6 @@
     }
 
 
-    }
-    recupNonLog($bdd);
-    recupLog($bdd);
 
 
     // $array = array("mail"=> "", "password" => "", "mailError" => "", "passwordError"=> "", "reussi" => false);
