@@ -1,5 +1,6 @@
 <?php
     include 'modele/connectDB.php';
+    $bdd = connectDB();
 
     function logIn(){
         $log = $_POST['mail'];

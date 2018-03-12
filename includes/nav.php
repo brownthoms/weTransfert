@@ -68,7 +68,7 @@
                             <input type="password" id="password" name="password" value="" class="form-control" placeholder="Votre mot de passe">
                             <p class="commantaire"></p>
                         </div>
-                        <button type="submit" class="btn btn-danger signUp">Sign Up</button>
+                        <button type="submit" onclick="createUser();" class="btn btn-danger signUp">Sign Up</button>
                     </div>
                 </form>
             </div>
