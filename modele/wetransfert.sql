@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Hôte : localhost
--- Généré le :  lun. 12 mars 2018 à 09:48
+-- Généré le :  lun. 12 mars 2018 à 12:20
 -- Version du serveur :  5.7.21-0ubuntu0.17.10.1
 -- Version de PHP :  7.2.2-3+ubuntu17.10.1+deb.sury.org+1
 
@@ -32,7 +32,7 @@ USE `wetransfert`;
 
 CREATE TABLE `log` (
   `id` int(11) NOT NULL,
-  `mail` varchar(255) NOT NULL,
+  `user_Id` int(11) NOT NULL,
   `fichier` varchar(255) NOT NULL,
   `url` varchar(255) NOT NULL,
   `date` datetime NOT NULL
@@ -51,6 +51,18 @@ CREATE TABLE `nonlog` (
   `heure` time NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8;
 
+-- --------------------------------------------------------
+
+--
+-- Structure de la table `user`
+--
+
+CREATE TABLE `user` (
+  `id` int(11) NOT NULL,
+  `mail` varchar(255) NOT NULL,
+  `mdp` varchar(255) NOT NULL
+) ENGINE=InnoDB DEFAULT CHARSET=utf8;
+
 --
 -- Index pour les tables déchargées
 --
@@ -60,13 +72,20 @@ CREATE TABLE `nonlog` (
 --
 ALTER TABLE `log`
   ADD PRIMARY KEY (`id`),
-  ADD UNIQUE KEY `mail` (`mail`);
+  ADD KEY `user_Id` (`user_Id`);
 
 --
 -- Index pour la table `nonlog`
 --
 ALTER TABLE `nonlog`
   ADD PRIMARY KEY (`id`);
+
+--
+-- Index pour la table `user`
+--
+ALTER TABLE `user`
+  ADD PRIMARY KEY (`id`),
+  ADD UNIQUE KEY `mail` (`mail`);
 
 --
 -- AUTO_INCREMENT pour les tables déchargées
@@ -83,6 +102,22 @@ ALTER TABLE `log`
 --
 ALTER TABLE `nonlog`
   MODIFY `id` int(11) NOT NULL AUTO_INCREMENT;
+
+--
+-- AUTO_INCREMENT pour la table `user`
+--
+ALTER TABLE `user`
+  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT;
+
+--
+-- Contraintes pour les tables déchargées
+--
+
+--
+-- Contraintes pour la table `log`
+--
+ALTER TABLE `log`
+  ADD CONSTRAINT `log_ibfk_1` FOREIGN KEY (`user_Id`) REFERENCES `user` (`id`);
 COMMIT;
 
 /*!40101 SET CHARACTER_SET_CLIENT=@OLD_CHARACTER_SET_CLIENT */;
