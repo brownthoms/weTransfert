@@ -11,11 +11,11 @@ $pwd = $_POST['password'];
 $reponse = $bdd->query("SELECT mail FROM user WHERE mail");
 $donnees = $reponse->fetch();
 
-if ($donnees['mail'] = $log){
-    $newUser = "INSERT INTO user(mail, mdp) VALUES ('$log', '$pwd')";
-    $bdd->exec($newUser);
+if ($donnees['mail'] == $log){
+    echo "Mail déjà utilisé";
     } else {
-        echo "Mail déjà utilisé";
+        $newUser = "INSERT INTO user(mail, mdp) VALUES ('$log', '$pwd')";
+        $bdd->exec($newUser);
 
     }
 
