@@ -1,14 +1,22 @@
 <?php
 
 //on se connecte
-include 'function.php';
+include 'functions.php';
 $bdd = connectDB();
 
-// variables auteur
-$mail = $_POST["mail"] ;
-$password = $_POST["password"] ;
+// variables user
 
+$log = $_POST['mail'];
+$pwd = $_POST['password'];
+$reponse = $bdd->query("SELECT mail FROM user WHERE mail");
+$donnees = $reponse->fetch();
 
+if ($donnees['mail'] = $log){
+    $newUser = "INSERT INTO user(mail, mdp) VALUES ('$log', '$pwd')";
+    $bdd->exec($newUser);
+    } else {
+        echo "Mail déjà utilisé";
 
+    }
 
 ?>

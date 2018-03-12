@@ -1,5 +1,5 @@
 <?php
-    include 'modele/connectDB.php';
+    include '../modele/connectDB.php';
     $bdd = connectDB();
 
     function createUser($bdd){

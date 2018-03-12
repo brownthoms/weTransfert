@@ -56,7 +56,7 @@
                 </button>
             </div>
             <div class="modal-body">
-                <form id="contact-form" class="" action="" method="post" role="form">
+                <form id="contact-form" class="" action="controller/logintest.php" method="post" role="form">
                     <div class="">
                         <div class="">
                             <label for="mail">Mail :</label>
@@ -68,7 +68,7 @@
                             <input type="password" id="password" name="password" value="" class="form-control" placeholder="Votre mot de passe">
                             <p class="commantaire"></p>
                         </div>
-                        <button type="submit" onclick="createUser();" class="btn btn-danger signUp">Sign Up</button>
+                        <button type="submit" class="btn btn-danger signUp">Sign Up</button>
                     </div>
                 </form>
             </div>

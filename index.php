@@ -4,7 +4,7 @@
         <meta charset="utf-8">
         <title>weTransfert</title>
         <?php include 'includes/header.php'; ?>
-        <?php include 'controller/functions.php'; ?>
+
 
         <!-- <script type="text/javascript" src="js/script.js"></script> -->
     </head>
