@@ -4,11 +4,13 @@
         <meta charset="utf-8">
         <title>weTransfert</title>
         <?php include 'includes/header.php'; ?>
-        <!--<script type="text/javascript" src="js/script.js"></script>-->
+
+        <!-- <script type="text/javascript" src="js/script.js"></script> -->
     </head>
     <body>
+        <?php include 'includes/nav.php'; ?>
+
         <div class="container">
-            <?php include 'includes/nav.php'; ?>
 
             <form class="form-inline">
                 <div class="">
@@ -54,7 +56,6 @@
 
             </div>
         </div>
-
         <script type="text/javascript" src="js/bootstrap.bundle.min.js"></script>
     </body>
 </html>
