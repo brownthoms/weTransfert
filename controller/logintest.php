@@ -8,14 +8,17 @@ $bdd = connectDB();
 
 $log = $_POST['mail'];
 $pwd = $_POST['password'];
-$reponse = $bdd->query("SELECT mail FROM user WHERE mail");
+$reponse = $bdd->query("SELECT mail FROM user WHERE mail='$log'");
 $donnees = $reponse->fetch();
 
-if ($donnees['mail'] = $log){
-    $newUser = "INSERT INTO user(mail, mdp) VALUES ('$log', '$pwd')";
-    $bdd->exec($newUser);
+//echo $donnees["mail"];
+
+
+if ($log == $donnees['mail']){
+    echo "Mail déjà utilisé";
     } else {
-        echo "Mail déjà utilisé";
+        $newUser = "INSERT INTO user(mail, mdp) VALUES ('$log', '$pwd')";
+        $bdd->exec($newUser);
 
     }
 
