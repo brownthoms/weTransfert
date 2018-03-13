@@ -48,6 +48,9 @@
     }
 
 
+    //uplaod public
+
+
 
 
     // $array = array("mail"=> "", "password" => "", "mailError" => "", "passwordError"=> "", "reussi" => false);

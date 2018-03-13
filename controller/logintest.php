@@ -16,6 +16,7 @@ $donnees = $reponse->fetch();
 
 if ($log == $donnees['mail']){
     echo "Mail déjà utilisé";
+    header("location: ../includes/nav.php#exampleModal");
     } else {
         $newUser = "INSERT INTO user(mail, mdp) VALUES ('$log', '$pwd')";
         $bdd->exec($newUser);

@@ -13,9 +13,10 @@
 
         <div class="container">
 
-            <form class="form-inline">
+            <form class="form-inline" method="post" action="upload.php" enctype="multipart/form-data">
                 <div class="">
-                    <input id='upFile' type="file"></input>
+                    <input type="hidden" name="MAX_FILE_SIZE" value="3000000">
+                    <input id='upFile' type="file" name="fichier" ></input>
                 </div>
                 <div class="text-right">
                     <button class="btn btn-outline-success my-2 my-sm-0" type="submit">Upload</button>
