@@ -5,12 +5,12 @@ $bdd = connectDB();
 
 // variables user
 
-// $log = $_POST['mail'];
-// $pwd = $_POST['password'];
-// $pwdControl = $_POST['passwordControl'];
-// $reponse = $bdd->query("SELECT mail FROM user WHERE mail='$log'");
-// $donnees = $reponse->fetch();
-//
+$log = $_POST['mail'];
+$pwd = $_POST['password'];
+$pwdControl = $_POST['passwordControl'];
+$reponse = $bdd->query("SELECT mail FROM user WHERE mail='$log'");
+$donnees = $reponse->fetch();
+
 // if (isset($pwd, $pwdControl) && $pwd == $pwdControl){
 //     if ($log == $donnees['mail']) {
 //         echo "Mail already used";
@@ -29,32 +29,28 @@ $bdd = connectDB();
         $array["password"] = verification($_POST["password"]);
         $array["passwordControl"] = verification($_POST["passwordControl"]);
         $array["reussi"] = true;
-        $mailTexte = "";
 
         if (!validMail($array["mail"])) {
             $array["mailError"] = "Invalid mail";
             $array["reussi"] = false;
-        } else {
-            $mailTexte = "Mail : {$array["mail"]}\n";
         }
-        if (empty($array["password"])) {
+        else if (empty($array["password"])) {
             $array["passwordError"] = "Champs vide";
             $array["reussi"] = false;
-        } else {
-            $mailTexte = "password : {$array["password"]}\n";
         }
-        if (empty($array["passwordControl"])) {
+        else if (empty($array["passwordControl"])) {
             $array["passwordControlError"] = "Champs vide";
             $array["reussi"] = false;
-        } else {
-            $mailTexte = "passwordControl : {$array["passwordControl"]}\n";
         }
-        if (isset($array["password"], $array["passwordControl"])) {
+        else if (isset($array["password"], $array["passwordControl"])) {
             if ($array["password"] != $array["passwordControl"]) {
                 $array["passwordError"] = "Mdp non identique";
             }
         }
         echo json_encode($array);
+    } else {
+        $newUser = "INSERT INTO user(mail, mdp) VALUES ('$log', '$pwd')";
+        $bdd->exec($newUser);
     }
 
     function validMail($var){

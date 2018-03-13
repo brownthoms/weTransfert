@@ -1,5 +1,6 @@
 $(document).ready(function(){
     $("#contact-form").submit(function(e){
+        console.log('coucou');
         e.preventDefault();
         $('.commantaire').empty();
         var postdata = $('#contact-form').serialize();
@@ -13,7 +14,7 @@ $(document).ready(function(){
                     $("#contact-form").append("<p class=\'merci\'>Bienvenue</p>");
                     $("#contact-form")[0].reset();
                 } else {
-                    $("#mail + .commantaire").html(result.mailError);
+                    $(".commantaire").html(result.mailError);
                     $("#password + .commantaire").html(result.passwordError);
                     $("#passwordControl + .commantaire").html(result.passwordControlError);
                 }
