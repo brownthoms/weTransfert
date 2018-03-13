@@ -53,7 +53,6 @@
                     else
                          echo 'The file was not able to be opened';
 
-
                 ?>
 
             </div>

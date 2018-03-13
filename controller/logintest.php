@@ -21,5 +21,9 @@ if (isset($pwd, $pwdControl) && $pwd == $pwdControl){
 
     }
 } else {
-    echo "Invalid password";
+    echo	"<script type=\"text/javascript\">
+                window.alert('mot de pas non identique');
+                window.location.href = '../index.php';
+                </script>";
+        exit;
 }
