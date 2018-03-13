@@ -44,14 +44,14 @@
                     } // On termine la boucle
 
                     echo '</ul><br />';
-                    echo 'Il y a <strong>' . $nb_fichier .'</strong> fichier(s) dans le dossier';
+                    echo '<strong>' . $nb_fichier .'</strong> file(s) in the folder';
 
                     closedir($dossier);
 
                     }
 
                     else
-                         echo 'Le dossier n\' a pas pu être ouvert';
+                         echo 'The file was not able to be opened';
 
 
                 ?>
