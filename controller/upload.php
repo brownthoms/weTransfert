@@ -25,9 +25,10 @@ echo '</pre>';*/
 
 
 
-/* upload bis + size */
+/* upload bis + size 31 48 62*/
 
 $target_dir = "../files/public/";
+
 $target_file = $target_dir . basename($_FILES["fichier"]["name"]);
 $uploadOk = 1;
 
@@ -45,33 +46,30 @@ if(isset($_POST["submit"]))
     }
 
 // Verif de la taille
-if ($_FILES["fichier"]["size"] > 300000)
-    {
-        echo "Sorry, your file is too large.";
-        $uploadOk = 0;
+function taille(){
+    if ($_FILES["fichier"]["size"] > 300000)
+        {
+            echo "Sorry, your file is too large.";
+            $uploadOk = 0;
+        }
+        header("location: ../index.php");
+
     }
+    taille();
 
 
-// Check si $uploadOk est à 0
-if ($uploadOk == 0)
+    // Check si $uploadOk est à 0
+    if ($uploadOk == 0)
     {
         echo "Sorry, your file was NOT uploaded.";
         // si tout est ok on upload
     } else
-        {
-            if (move_uploaded_file($_FILES["fichier"]["tmp_name"], $target_file)) {
-                echo "The file ". basename( $_FILES["fichier"]["name"]). " has been uploaded.";
-        } else
-            {
-                echo "Sorry, there was an error uploading your file.";
-            }
-        }
-
-
-// isset none
-// Check le fichier
-if(!isset($_POST["submit"]))
     {
-        echo("aucun post");
-        
+        if (move_uploaded_file($_FILES["fichier"]["tmp_name"], $target_file)) {
+            echo "The file ". basename( $_FILES["fichier"]["name"]). " has been uploaded.";
+            header("location: ../index.php");
+        } else
+        {
+            echo "Sorry, there was an error uploading your file.";
+        }
     }
