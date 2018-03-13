@@ -13,11 +13,13 @@ $donnees = $reponse->fetch();
 
 if (isset($pwd, $pwdControl) && $pwd == $pwdControl){
     if ($log == $donnees['mail']) {
-        echo "Mail déjà utilisé";
+        echo "Mail already used";
         //header("location: ../includes/nav.php#exampleModal");
     } else {
         $newUser = "INSERT INTO user(mail, mdp) VALUES ('$log', '$pwd')";
         $bdd->exec($newUser);
 
-    }    
+    }
+} else {
+    echo "Invalid password";
 }
