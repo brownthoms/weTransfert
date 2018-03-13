@@ -54,7 +54,6 @@
                          echo 'The file was not able to be opened';
 
                 ?>
-
             </div>
         </div>
         <script type="text/javascript" src="js/bootstrap.bundle.min.js"></script>
