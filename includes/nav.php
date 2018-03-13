@@ -61,17 +61,17 @@
                     <div class="">
                         <div class="">
                             <label for="mail">Mail :</label>
-                            <input type="text" id="mail" name="mail" value="" class="form-control" placeholder="Enter your mail" required>
+                            <input type="text" id="mail" name="mail" value="" class="form-control" placeholder="Enter your mail">
                             <p class="commantaire"></p>
                         </div>
                         <div class="">
                             <label for="password">Password :</label>
-                            <input type="password" id="password" name="password" value="" class="form-control" placeholder="Enter your password" required>
+                            <input type="password" id="password" name="password" value="" class="form-control" placeholder="Enter your password">
                             <p class="commantaire"></p>
                         </div>
                         <div class="">
                             <label for="password">Re:Password :</label>
-                            <input type="password" id="passwordControl" name="passwordControl" value="" class="form-control" placeholder="Enter again" required>
+                            <input type="password" id="passwordControl" name="passwordControl" value="" class="form-control" placeholder="Enter again">
                             <p class="commantaire"></p>
                         </div>
                     </div>
