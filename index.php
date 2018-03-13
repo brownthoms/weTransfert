@@ -49,9 +49,25 @@
                     closedir($dossier);
 
                     }
+                    
 
-                    else
-                         echo 'The file was not able to be opened';
+
+
+
+
+                    // $req = mysql_query("SELECT * FROM membres WHERE actif='0'"); //On récupère tous les membres pas actifs
+                    //     while ($donnees = mysql_fetch_array($req))
+                    //     {
+                    //         $date_inscription = $donnees['ta_colonne_date_inscription'];
+                    //         $date = time();
+                    //         $difference = $date - $date_inscription;
+                    //         $nbreSecondesEn2Jours = (3600*24)*2;
+                    //         if ($difference > $nbreSecondesEn2Jours)//On supprime le membre
+                    //         {
+                    //         $id = $donnees['id'];
+                    //         mysql_query("DELETE FROM membres WHERE id='$id'");
+                    //         }
+                    //     }
 
                 ?>
             </div>

@@ -1,26 +1,27 @@
-$(document).ready(function(){
-    $("#contact-form").submit(function(e){
-        e.preventDefault();
-        $('.commantaire').empty();
-        var postdata = $('#contact-form').serialize();
-        $.ajax({
-            type: 'POST',
-            url: 'modele/logintest.php',
-            data : postdata,
-            dataType: 'json',
-            success: function(result){
-                if (result.reussi) {
-                    $("#contact-form").append("<p class=\'merci\'>Bienvenue</p>");
-                    $("#contact-form")[0].reset();
-                } else {
-                    $("#mail + .commantaire").html(result.mailError);
-                    $("#password + .commantaire").html(result.passwordError);
-                    $("#passwordControl + .commantaire").html(result.passwordControlError);
-                }
-            }
-        });
-    });
-})
+// $(document).ready(function(){
+//     $("#contact-form").submit(function(e){
+//         console.log('coucou');
+//         e.preventDefault();
+//         $('.commantaire').empty();
+//         var postdata = $('#contact-form').serialize();
+//         $.ajax({
+//             type: 'POST',
+//             url: 'modele/logintest.php',
+//             data : postdata,
+//             dataType: 'json',
+//             success: function(result){
+//                 if (result.reussi) {
+//                     $("#contact-form").append("<p class=\'merci\'>Bienvenue</p>");
+//                     $("#contact-form")[0].reset();
+//                 } else {
+//                     $(".commantaire").html(result.mailError);
+//                     $("#password + .commantaire").html(result.passwordError);
+//                     $("#passwordControl + .commantaire").html(result.passwordControlError);
+//                 }
+//             }
+//         });
+//     });
+// })
 
 /* Upload d'un fichier */
 // function upFile(evt) {

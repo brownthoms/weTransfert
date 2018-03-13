@@ -37,7 +37,7 @@ $uploadOk = 1;
 if(isset($_POST["submit"]))
     {
         $check = getfilesize($_FILES["fichier"]["tmp_name"]);
-        if($check !== false) {
+        if($check == true) {
             $uploadOk = 1;
 
         } else {
@@ -56,7 +56,7 @@ function taille(){
 
     }
     taille();
-
+    include '../modele/connectDB.php';
 
     // Check si $uploadOk est à 0
     if ($uploadOk == 0)
@@ -66,6 +66,10 @@ function taille(){
     } else
     {
         if (move_uploaded_file($_FILES["fichier"]["tmp_name"], $target_file)) {
+            $bdd = connectDB();
+            $file = $_FILES['fichier']['name'];
+            $newFile = "INSERT INTO nonlog(file) VALUES ('$file')";
+            $bdd->exec($newFile);
             echo "The file ". basename( $_FILES["fichier"]["name"]). " has been uploaded.";
             header("location: ../index.php");
         } else
