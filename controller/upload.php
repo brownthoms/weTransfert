@@ -36,7 +36,7 @@ $uploadOk = 1;
 if(isset($_POST["submit"]))
     {
         $check = getfilesize($_FILES["fichier"]["tmp_name"]);
-        if($check !== false) {
+        if($check == true) {
             $uploadOk = 1;
 
         } else {
@@ -61,17 +61,10 @@ if ($uploadOk == 0)
         {
             if (move_uploaded_file($_FILES["fichier"]["tmp_name"], $target_file)) {
                 echo "The file ". basename( $_FILES["fichier"]["name"]). " has been uploaded.";
+                $newUser = "INSERT INTO user(mail, mdp) VALUES ('$log', '$pwd')";
+                $bdd->exec($newUser);
         } else
             {
                 echo "Sorry, there was an error uploading your file.";
             }
         }
-
-
-// isset none
-// Check le fichier
-if(!isset($_POST["submit"]))
-    {
-        echo("aucun post");
-        
-    }
