@@ -28,12 +28,12 @@
                     <div class="">
                         <div class="">
                             <label for="mail">Mail :</label>
-                            <input type="text" id="mail" name="mail" value="" class="form-control" placeholder="Votre mail">
+                            <input type="text" id="mail" name="mail" value="" class="form-control" placeholder="Enter your mail">
                             <p class="commantaire"></p>
                         </div>
                         <div class="">
                             <label for="password">Password :</label>
-                            <input type="password" id="password" name="password" value="" class="form-control" placeholder="Votre mot de passe">
+                            <input type="password" id="password" name="password" value="" class="form-control" placeholder="Enter your password">
                             <p class="commantaire"></p>
                         </div>
                     </div>
@@ -61,12 +61,17 @@
                     <div class="">
                         <div class="">
                             <label for="mail">Mail :</label>
-                            <input type="text" id="mail" name="mail" value="" class="form-control" placeholder="Votre mail" required>
+                            <input type="text" id="mail" name="mail" value="" class="form-control" placeholder="Enter your mail" required>
                             <p class="commantaire"></p>
                         </div>
                         <div class="">
                             <label for="password">Password :</label>
-                            <input type="password" id="password" name="password" value="" class="form-control" placeholder="Votre mot de passe" required>
+                            <input type="password" id="password" name="password" value="" class="form-control" placeholder="Enter your password" required>
+                            <p class="commantaire"></p>
+                        </div>
+                        <div class="">
+                            <label for="password">Re:Password :</label>
+                            <input type="password" id="passwordControl" name="passwordControl" value="" class="form-control" placeholder="Enter again" required>
                             <p class="commantaire"></p>
                         </div>
                     </div>

@@ -11,15 +11,13 @@ $pwdControl = $_POST['passwordControl'];
 $reponse = $bdd->query("SELECT mail FROM user WHERE mail='$log'");
 $donnees = $reponse->fetch();
 
-if ($pwd == $pwdControl) {
-    echo "Faux";
-}
-
-if ($log == $donnees['mail']) {
-    echo "Mail déjà utilisé";
-    //header("location: ../includes/nav.php#exampleModal");
+if (isset($pwd, $pwdControl) && $pwd == $pwdControl){
+    if ($log == $donnees['mail']) {
+        echo "Mail déjà utilisé";
+        //header("location: ../includes/nav.php#exampleModal");
     } else {
         $newUser = "INSERT INTO user(mail, mdp) VALUES ('$log', '$pwd')";
         $bdd->exec($newUser);
 
-    }
+    }    
+}
