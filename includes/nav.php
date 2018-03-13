@@ -36,12 +36,12 @@
                             <p class="commantaire"></p>
                         </div>
                     </div>
-                </form>
-            </div>
-            <div class="modal-footer">
-                <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
-                <button type="submit" class="btn btn-danger">Sign In</button>
-            </div>
+                </div>
+                <div class="modal-footer">
+                    <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
+                    <button type="submit" class="btn btn-success">Sign In</button>
+                </div>
+            </form>
         </div>
     </div>
 </div>
@@ -68,13 +68,18 @@
                             <input type="password" id="password" name="password" value="" class="form-control" placeholder="Votre mot de passe" >
                             <p class="commantaire"></p>
                         </div>
-                        <button type="submit" class="btn btn-danger signUp">Sign Up</button>
+                        <div class="">
+                            <label for="password">Re:password :</label>
+                            <input type="password" id="passwordControl" name="passwordControl" value="" class="form-control" placeholder="Votre mot de passe" >
+                            <p class="commantaire"></p>
+                        </div>
                     </div>
-                </form>
-            </div>
-            <div class="modal-footer">
-                <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
-            </div>
+                </div>
+                <div class="modal-footer">
+                    <button type="submit" class="btn btn-danger signUp">Sign Up</button>
+                    <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
+                </div>
+            </form>
         </div>
     </div>
 </div>
