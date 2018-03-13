@@ -24,7 +24,7 @@ if (empty($_POST['mail']) || empty($_POST['password'])) {
         $pwd = mysql_real_escape_string($pwd);
 
         // on recupere les infos user
-        $query = mysql_query("select * from user where password='$pwd' AND mail='$log'", $bdd);
+        $query = mysql_query("SELECT * from user where password='$pwd' AND mail='$log'", $bdd);
         $rows = mysql_num_rows($query);
 
         if ($rows == 1) {
@@ -33,7 +33,7 @@ if (empty($_POST['mail']) || empty($_POST['password'])) {
             //on redirige vers une page
             header("location: profile.php");
         } else {
-        $error = "Mail ou Mot de passe invalide";
+            $error = "Mail ou Mot de passe invalide";
         }
     //fermer la connexion
     mysql_close($bdd);
