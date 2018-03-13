@@ -1,5 +1,4 @@
 <?php
-
 //on se connecte
 include 'functions.php';
 $bdd = connectDB();
@@ -12,7 +11,7 @@ $pwdControl = $_POST['passwordControl'];
 $reponse = $bdd->query("SELECT mail FROM user WHERE mail='$log'");
 $donnees = $reponse->fetch();
 
-if (!isset($pwd == $pwdControl)) {
+if ($pwd == $pwdControl) {
     echo "Faux";
 }
 
