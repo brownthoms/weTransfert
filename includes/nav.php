@@ -12,6 +12,7 @@
         </form>
     </div>
 </nav>
+
 <!-- Modal connexion -->
 <div class="modal fade" id="exampleModal" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
     <div class="modal-dialog" role="document">
@@ -27,21 +28,21 @@
                     <div class="">
                         <div class="">
                             <label for="mail">Mail :</label>
-                            <input type="text" id="mail" name="mail" value="" class="form-control" placeholder="Enter your mail">
+                            <input type="text" id="mail" name="mail" value="" class="form-control" placeholder="Votre mail">
                             <p class="commantaire"></p>
                         </div>
                         <div class="">
                             <label for="password">Password :</label>
-                            <input type="password" id="password" name="password" value="" class="form-control" placeholder="Enter your password">
+                            <input type="password" id="password" name="password" value="" class="form-control" placeholder="Votre mot de passe">
                             <p class="commantaire"></p>
                         </div>
                     </div>
-                </div>
-                <div class="modal-footer">
-                    <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
-                    <button type="submit" class="btn btn-success">Sign In</button>
-                </div>
-            </form>
+            </div>
+            <div class="modal-footer">
+                <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
+                <button type="submit" class="btn btn-success">Sign In</button>
+            </div>
+        </form>
         </div>
     </div>
 </div>
@@ -60,26 +61,21 @@
                     <div class="">
                         <div class="">
                             <label for="mail">Mail :</label>
-                            <input type="text" id="mail" name="mail" value="" class="form-control" placeholder="Enter your mail" >
+                            <input type="text" id="mail" name="mail" value="" class="form-control" placeholder="Votre mail" required>
                             <p class="commantaire"></p>
                         </div>
                         <div class="">
                             <label for="password">Password :</label>
-                            <input type="password" id="password" name="password" value="" class="form-control" placeholder="Enter your password">
-                            <p class="commantaire"></p>
-                        </div>
-                        <div class="">
-                            <label for="password">Re:password :</label>
-                            <input type="password" id="passwordControl" name="passwordControl" value="" class="form-control" placeholder="Enter your password" >
+                            <input type="password" id="password" name="password" value="" class="form-control" placeholder="Votre mot de passe" required>
                             <p class="commantaire"></p>
                         </div>
                     </div>
-                </div>
-                <div class="modal-footer">
-                    <button type="submit" class="btn btn-danger signUp">Sign Up</button>
-                    <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
-                </div>
-            </form>
+            </div>
+            <div class="modal-footer">
+                <button type="submit" class="btn btn-danger signUp">Sign Up</button>
+                <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
+            </div>
+        </form>
         </div>
     </div>
 </div>
