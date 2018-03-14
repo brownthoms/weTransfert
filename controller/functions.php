@@ -7,6 +7,7 @@
         $row = $reponse->fetch();
         $mail = $row['mail'];
         return $mail;
+
     }
 
     function verifPassword($passWord){

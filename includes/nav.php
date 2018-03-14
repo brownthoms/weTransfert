@@ -27,6 +27,11 @@
                 <form id="contact-form" class="" action="controller/connexion.php" method="post" role="form">
                     <div class="">
                         <div class="">
+                            <label for="mail">Nom :</label>
+                            <input type="text" id="nom" name="nom" value="" class="form-control" placeholder="Enter your name">
+                            <p class="commantaire"></p>
+                        </div>
+                        <div class="">
                             <label for="mail">Mail :</label>
                             <input type="text" id="mail" name="mail" value="" class="form-control" placeholder="Enter your mail">
                             <p class="commantaire"></p>
@@ -59,6 +64,11 @@
             <div class="modal-body">
                 <form id="contact-form" class="" action="controller/logintest.php" method="post" role="form">
                     <div class="">
+                        <div class="">
+                            <label for="mail">Nom :</label>
+                            <input type="text" id="nom" name="name" value="" class="form-control" placeholder="Enter your name">
+                            <p class="commantaire"></p>
+                        </div>
                         <div class="">
                             <label for="mail">Mail :</label>
                             <input type="text" id="mail" name="mail" value="" class="form-control" placeholder="Enter your mail">

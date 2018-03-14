@@ -18,14 +18,15 @@ if (empty($_POST['mail']) || empty($_POST['password'])) {
         $bdd = connectDB();
 
         // on protege mysql
+        $name = stripslashes($name);
         $log = stripslashes($log);
         $pwd = stripslashes($pwd);
         $log = mysql_real_escape_string($log);
         $pwd = mysql_real_escape_string($pwd);
 
         // on recupere les infos user
-        $query = mysql_query("select * from user where password='$pwd' AND mail='$log'", $bdd);
-        $rows = mysql_num_rows($query);
+        $user = $bdd->query("SELECT mail, name FROM user WHERE mail='$log'");
+        $donnees = $user->fetch();
 
         if ($rows == 1) {
             // initialiser la session
@@ -33,7 +34,7 @@ if (empty($_POST['mail']) || empty($_POST['password'])) {
             //on redirige vers une page
             header("location: profile.php");
         } else {
-        $error = "Mail ou Mot de passe invalide";
+            $error = "Mail ou Mot de passe invalide";
         }
     //fermer la connexion
     mysql_close($bdd);
