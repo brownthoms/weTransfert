@@ -28,9 +28,6 @@ if (empty($_POST['mail']) || empty($_POST['password'])) {
         $user = $bdd->query("SELECT mail, name FROM user WHERE mail='$log'");
         $donnees = $user->fetch();
 
-        $query = mysql_query("SELECT * from user where password='$pwd' AND mail='$log'", $bdd);
-        $rows = mysql_num_rows($query);
-
         if ($rows == 1) {
             // initialiser la session
             $_SESSION['login_user']=$log;
