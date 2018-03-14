@@ -8,7 +8,7 @@ include('session.php');
     <link href="style.css" rel="stylesheet" type="text/css">
 </head>
 <body>
-    <?php include 'includes/nav.php'; ?>
+    <?php include 'includes/navuser.php'; ?>
 
     <div class="container">
 
@@ -29,31 +29,9 @@ include('session.php');
 
         <div class="jumbotron">
             <?php
+                $user = $bdd->query("SELECT mail, name FROM user WHERE mail='$log'");
+                $donnees = $user->fetch();
 
-                $nb_fichier = 0;
-                $dir = "./files/users";
-                echo '<ul>';
-
-
-                if($dossier = opendir($dir))
-                {
-                    while(false !== ($fichier = readdir($dossier)))
-                    {
-                        if($fichier != '.' && $fichier != '..' && $fichier != 'index.php')
-                        {
-
-                            $nb_fichier++; // On incrémente le compteur de 1
-                            echo '<li><a href="./files/users/' . $fichier . '">' . $fichier . '</a></li>';
-                        } // On ferme le if (qui permet de ne pas afficher index.php, etc.)
-
-                } // On termine la boucle
-
-                echo '</ul><br />';
-                echo '<strong>' . $nb_fichier .'</strong> file(s) in the folder';
-
-                closedir($dossier);
-
-                }
 
             ?>
         </div>
