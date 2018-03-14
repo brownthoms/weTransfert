@@ -1,13 +1,13 @@
-<?php
-include('session.php');
-?>
 <!DOCTYPE html>
 <html>
 <head>
     <title>Profile de <?php echo $login_session;?></title>
-    <link href="style.css" rel="stylesheet" type="text/css">
+    <link href="../css/style.css" rel="stylesheet" type="text/css">
 </head>
 <body>
+    <?php
+    include('session.php');
+    ?>
     <?php include 'includes/navuser.php'; ?>
 
     <div class="container">
