@@ -1,21 +1,22 @@
 <?php
     include '../modele/connectDB.php';
-    $bdd = connectDB();
 
-    function logIn(){
-        $log = $_POST['mail'];
-        $pwd = $_POST['password'];
+    function verifMail($mail){
+        $bdd = connectDB();
+        $reponse = $bdd->query("SELECT mail FROM user WHERE user.mail = '$mail'");
+        $row = $reponse->fetch();
+        $mail = $row['mail'];
+        return $mail;
 
-        if (isset($log) && isset($pwd)){
-            session_start();
-            $_SESSION['login'] = $_POST['mail'];
-            $_SESSION['password'] = $_POST['password'];
-            header('location : index.php');
-        } else {
-            echo '<body onLoad="alert(\'Membre non reconnu...\')">';
-        }
     }
 
+    function verifPassword($passWord){
+        $bdd = connectDB();
+        $reponse = $bdd->query("SELECT mdp FROM user WHERE user.mdp = '$passWord'");
+        $row = $reponse->fetch();
+        $mdp = $row['mdp'];
+        return $mdp;
+    }
 
     function recupNonLog($bdd){
         $reponse = $bdd->query('SELECT * FROM nonlog');
