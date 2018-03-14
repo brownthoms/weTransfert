@@ -6,11 +6,11 @@
     <head>
         <meta charset="utf-8">
         <title>weTransfert</title>
-        <?php include 'includes/header.php'; ?>
+        <?php include '../includes/header.php'; ?>
 
     </head>
     <body>
-    <?php include 'includes/navuser.php'; ?>
+    <?php include '../includes/navuser.php'; ?>
         <div class="container">
 
             <form class="form-inline" method="post" action="controller/upload.php" enctype="multipart/form-data">
