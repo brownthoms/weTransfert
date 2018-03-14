@@ -18,10 +18,11 @@ if (isset($pwd, $pwdControl) && $pwd == $pwdControl){
         $newUser = "INSERT INTO user(mail, mdp) VALUES ('$log', '$pwd')";
         $bdd->exec($newUser);
         echo "Welcome !";
-        header("location:../index.php");
+        //header("location:../index.php");
     }
 }else {
-    header("location:../index.php");
+    echo "mot de pass invalid";
+    //header("location:../index.php");
 }
 
 
