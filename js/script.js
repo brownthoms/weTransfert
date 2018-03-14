@@ -6,7 +6,7 @@
 //         var postdata = $('#contact-form').serialize();
 //         $.ajax({
 //             type: 'POST',
-//             url: 'modele/logintest.php',
+//             url: 'controller/logintest.php',
 //             data : postdata,
 //             dataType: 'json',
 //             success: function(result){
