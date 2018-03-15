@@ -27,31 +27,9 @@
 
             <div class="jumbotron">
                 <?php
-
-                    $nb_fichier = 0;
-                    $dir = "../files/users";
-                    echo '<ul>';
-
-
-                    if($dossier = opendir($dir))
-                    {
-                        while(false !== ($fichier = readdir($dossier)))
-                        {
-                            if($fichier != '.' && $fichier != '..' && $fichier != 'index.php')
-                            {
-
-                                $nb_fichier++; // On incrémente le compteur de 1
-                                echo '<li><a href="./files/users/' . $fichier . '">' . $fichier . '</a></li>';
-                            } // On ferme le if (qui permet de ne pas afficher index.php, etc.)
-
-                    } // On termine la boucle
-
-                    echo '</ul><br />';
-                    echo '<strong>' . $nb_fichier .'</strong> file(s) in the folder';
-
-                    closedir($dossier);
-
-                    }
+                session_start();
+                echo $_SESSION['mail'];
+                echo  $_SESSION['nom'];
                 ?>
             </div>
         </div>

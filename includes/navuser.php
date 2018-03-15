@@ -6,7 +6,7 @@
     </button>
     <div class="collapse navbar-collapse" id="navbarCollapse">
         <div class="text-center offset-1">
-            <span class="texte">Bienvenue</span><span class="name_session"><?php echo $name; ?></span>
+            <span class="texte">Bienvenue </span><span class="name_session"><?php session_start(); echo $_SESSION['nom']; ?></span>
         </div>
         <ul class="navbar-nav mr-auto"></ul>
         <form class="form-inline mt-2 mt-md-0" action="" method="post">
