@@ -1,6 +1,6 @@
 <?php
 include '../modele/connectDB.php';
-$target_dir = "../files/public/";
+$target_dir = "../files/users/";
 
 $target_file = $target_dir . basename($_FILES["fichier"]["name"]);
 $uploadOk = 1;
@@ -20,12 +20,12 @@ if(isset($_POST["submit"]))
 
 // Verif de la taille
 function taille(){
-    if ($_FILES["fichier"]["size"] > 300000)
+    if ($_FILES["fichier"]["size"] > 700000)
         {
             echo "Sorry, your file is too large.";
             $uploadOk = 0;
         }
-        header("location: ../index.php");
+        header("location: ../controller/profile.php");
 
     }
     taille();
@@ -41,10 +41,11 @@ function taille(){
             $bdd = connectDB();
             $file = $_FILES['fichier']['name'];
             $heure = date("H:i");
-            $newFile = "INSERT INTO nonlog(file, heure) VALUES ('$file', '$heure')";
+            $userId = "";
+            $newFile = "INSERT INTO `log`(user_id, file, date) VALUES ('$userId', '$file', '$heure')";
             $bdd->exec($newFile);
             echo "The file ". basename( $_FILES["fichier"]["name"]). " has been uploaded.";
-            header("location: ../index.php");
+            header("location: ../controller/profile.php");
         } else
         {
             echo "Sorry, there was an error uploading your file.";
