@@ -19,6 +19,7 @@
                 <div class="">
                     <input type="hidden" name="MAX_FILE_SIZE" value="7000000">
                     <input id='upFile' type="file" name="fichier"></input>
+                    <input type="hidden" name="mail" value='<?php $mail = $_SESSION['mail']; echo $mail; ?>'>
                 </div>
                 <div class="text-right mb-2">
                     <button class="btn btn-outline-success my-2 my-sm-0" type="submit">Upload</button>
