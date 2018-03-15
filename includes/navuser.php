@@ -5,11 +5,12 @@
     </button>
     <div class="collapse navbar-collapse" id="navbarCollapse">
         <div class="text-center offset-1">
-            <span class="texte">Bienvenue </span><span class="name_session"><?php session_start(); echo $_SESSION['nom']; ?></span>
+            <span class="texte">Bienvenue </span><span class="name_session"><?php echo $_SESSION['nom']; ?></span>
         </div>
         <ul class="navbar-nav mr-auto"></ul>
-        <form class="form-inline" action="" method="post">
-            <button type="button" class="btn btn-danger disco" data-toggle="modal" data-target="#exampleModal1" data-whatever="@getbootstrap">Disconnect</button>
+        <form class="form-inline" action="disconnect.php" method="post">
+            <input type="hidden" name="connect" value='<?php $connect = $_SESSION['connect']; echo $connect; ?>'>
+            <button type="submit" class="btn btn-danger disco" data-toggle="modal" data-target="#exampleModal1" data-whatever="@getbootstrap">Disconnect</button>
         </form>
     </div>
 </nav>

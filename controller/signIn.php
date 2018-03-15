@@ -17,6 +17,7 @@
             $_SESSION['mail'] = $_POST['mail'];
             $_SESSION['nom'] = $nom;
 
+
             header('location: profile.php');
 
         }
