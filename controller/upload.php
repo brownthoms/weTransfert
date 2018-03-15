@@ -1,5 +1,4 @@
 <?php
-/* upload bis + size 31 48 62*/
 
 $target_dir = "../files/public/";
 
@@ -30,6 +29,8 @@ function taille(){
 
     }
     taille();
+
+    
     include '../modele/connectDB.php';
 
     // Check si $uploadOk est à 0
