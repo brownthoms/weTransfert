@@ -1,4 +1,4 @@
-<!DOCTYPE html>
+<?php //include 'functions.php'?>
 <html>
     <head>
         <meta charset="utf-8">
@@ -27,10 +27,15 @@
 
             <div class="jumbotron">
                 <?php
-                session_start();
-                echo $_SESSION['mail'];
-                echo  $_SESSION['nom'];
-                ?>
+                //session_start();
+                // echo $_SESSION['mail'];
+                // echo  $_SESSION['nom'];
+                $req = afficherFichier($_SESSION['mail']);
+                while ($donnees = $req->fetch()){ ?>
+                    <ul>
+                        <li><?php echo $donnees['fichier']; ?></li>
+                    </ul>
+                <?php } ?>
             </div>
         </div>
 
