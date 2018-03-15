@@ -25,7 +25,7 @@ function tailleLog(){
             echo "Sorry, your file is too large.";
             $uploadOk = 0;
         }
-        header("location: ../controller/profile.php");
+        header("location: profile.php");
 
     }
     tailleLog();
@@ -41,8 +41,11 @@ function tailleLog(){
             $bdd = connectDB();
             $file = $_FILES['fichier']['name'];
             $heure = date("H:i");
-            $userId = "SELECT user.id FROM user INNER JOIN `log` ON user.id = `log`.user_Id WHERE mail = "a" ";
-            $newFile = "INSERT INTO `log`(user_id, fichiers, date) VALUES ('$userId', '$file', '$heure')";
+            $userName = $_SESSION['mail'];
+            $userId = "SELECT user.id FROM user INNER JOIN log.user_id = user.id WHERE mail = '$userName'";
+            $bdd->exec($userId);
+            $userId->fetch();
+            $newFile = "INSERT INTO log(user_id, fichier, date) VALUES ('$userId', '$file', '$heure')";
             $bdd->exec($newFile);
             echo "The file ". basename( $_FILES["fichier"]["name"]). " has been uploaded.";
             header("location: ../controller/profile.php");
