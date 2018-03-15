@@ -6,13 +6,13 @@ $bdd = connectDB();
 
 // effacer les nom de fichiers dans la BDD nonLog = PUBLIC
 function deleteFileFromDB($bdd) {
-    $stmt = $bdd->prepare("DELETE FROM nonlog WHERE heure >= (CURTIME() - 10)");
+    $stmt = $bdd->prepare("DELETE FROM nonlog WHERE heure < time(NOW()-1000)");
     $stmt->execute();
 }
 
 // effacer les fichiers PUBLIC sur le disque
 function selectFileAndDeleteFile($bdd){
-     $stmt = $bdd->prepare("SELECT heure FROM nonlog WHERE CURTIME() - 10");
+     $stmt = $bdd->prepare("SELECT * FROM nonlog WHERE heure < time(NOW()-1000)");
      $stmt->execute();
      $table = array();
 
@@ -35,13 +35,13 @@ function selectFileAndDeleteFile($bdd){
 
  // effacer les nom de fichiers dans la BDD Log = User
  function deleteFileFromDBLog($bdd) {
-     $stmt = $bdd->prepare("DELETE FROM `log` WHERE DATEDIFF(CURDATE(), date) < 1");
+     $stmt = $bdd->prepare("DELETE FROM `date` WHERE DATEDIFF(CURDATE(), date) < 1");
      $stmt->execute();
  }
 
  // effacer les fichiers LOG sur le disque
  function selectFileAndDeleteFileLog($bdd){
-      $stmt = $bdd->prepare("SELECT heure FROM `log` WHERE DATEDIFF(CURDATE(), date) < 1");
+      $stmt = $bdd->prepare("SELECT `date` FROM `log` WHERE DATEDIFF(CURDATE(), date) < 1");
       $stmt->execute();
       $table = array();
 
