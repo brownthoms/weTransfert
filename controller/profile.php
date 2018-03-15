@@ -15,7 +15,7 @@
     <?php include '../includes/navuser.php'; ?>
         <div class="container">
 
-            <form class="form-inline" method="post" action="controller/upload.php" enctype="multipart/form-data">
+            <form class="form-inline" method="post" action="controller/uploadLog.php" enctype="multipart/form-data">
                 <div class="">
                     <input type="hidden" name="MAX_FILE_SIZE" value="7000000">
                     <input id='upFile' type="file" name="fichier"></input>

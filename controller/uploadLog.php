@@ -19,7 +19,7 @@ if(isset($_POST["submit"]))
     }
 
 // Verif de la taille
-function taille(){
+function tailleLog(){
     if ($_FILES["fichier"]["size"] > 700000)
         {
             echo "Sorry, your file is too large.";
@@ -28,7 +28,7 @@ function taille(){
         header("location: ../controller/profile.php");
 
     }
-    taille();
+    tailleLog();
 
     // Check si $uploadOk est à 0
     if ($uploadOk == 0)
@@ -41,8 +41,8 @@ function taille(){
             $bdd = connectDB();
             $file = $_FILES['fichier']['name'];
             $heure = date("H:i");
-            $userId = "";
-            $newFile = "INSERT INTO `log`(user_id, file, date) VALUES ('$userId', '$file', '$heure')";
+            $userId = "SELECT user.id FROM user INNER JOIN `log` ON user.id = `log`.user_Id WHERE mail = "a" ";
+            $newFile = "INSERT INTO `log`(user_id, fichiers, date) VALUES ('$userId', '$file', '$heure')";
             $bdd->exec($newFile);
             echo "The file ". basename( $_FILES["fichier"]["name"]). " has been uploaded.";
             header("location: ../controller/profile.php");
