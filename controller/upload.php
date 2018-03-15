@@ -1,5 +1,7 @@
 <?php
+
 include '../modele/connectDB.php';
+
 $target_dir = "../files/public/";
 $target_file = $target_dir . basename($_FILES["fichier"]["name"]);
 $uploadOk = 1;
@@ -24,20 +26,22 @@ function taille(){
 }
 taille();
 
+
 // Check si $uploadOk est à 0
 if ($uploadOk == 0){
     echo "Sorry, your file was NOT uploaded.";
     // si tout est ok on upload
-} else{
-    if (move_uploaded_file($_FILES["fichier"]["tmp_name"], $target_file)){
-        $bdd = connectDB();
-        $file = $_FILES['fichier']['name'];
-        $heure = date("H:i");
-        $newFile = "INSERT INTO nonlog(file, heure) VALUES ('$file', '$heure')";
-        $bdd->exec($newFile);
-        echo "The file ". basename( $_FILES["fichier"]["name"]). " has been uploaded.";
-        header("location: ../index.php");
-    } else{
-        echo "Sorry, there was an error uploading your file.";
-    }
+}   else{
+        if (move_uploaded_file($_FILES["fichier"]["tmp_name"], $target_file)){
+            $bdd = connectDB();
+            $file = $_FILES['fichier']['name'];
+            $heure = date("H:i");
+            $newFile = "INSERT INTO nonlog(file, heure) VALUES ('$file', '$heure')";
+            $bdd->exec($newFile);
+            echo "The file ". basename( $_FILES["fichier"]["name"]). " has been uploaded.";
+            header("location: ../index.php");
+        } else{
+            echo "Sorry, there was an error uploading your file.";
+        }
+
     }
