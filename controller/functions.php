@@ -25,6 +25,28 @@
         }
     }
 
+    function user_name($mail){
+        $bdd = connectDB();
+        try{
+            $reponse = $bdd->query("SELECT nom FROM user WHERE user.mail = '$mail'");
+            $row = $reponse->fetch();
+            $nom = $row['nom'];
+            return $nom;
+        }catch(Exception $e){
+            die("request error");
+        }
+    }
+    function sinUp($mail, $mdp, $nom){
+        $bdd = connectDB();
+        try {
+            $req = $bdd->prepare('INSERT INTO user(mail, mdp, nom) VALUES(?,?,?)');
+            $req->execute(array($mail, $mdp, $nom));
+        } catch (\Exception $e) {
+            die("erreur d'insertion dans la table");
+        }
+
+    }
+
     function afficherFichier($mail){
         $bdd = connectDB();
         try{

@@ -15,10 +15,14 @@ if (isset($pwd, $pwdControl) && $pwd == $pwdControl){
     if ($log == $donnees['mail'] && isset($name)) {
         echo "Mail already used";
     } else {
-        $newUser = "INSERT INTO user(nom, mail, mdp) VALUES ('$name', '$log', '$pwd')";
-        $bdd->exec($newUser);
-        echo "Welcome !";
-        //header("location:../index.php");
+
+        sinUp($log, $pwd, $name);
+        session_start();
+
+        $_SESSION['mail'] = $log;
+        $_SESSION['nom'] = $name;
+
+        header('location: profile.php');
     }
 }else {
     echo "mot de pass invalid";
