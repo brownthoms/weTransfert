@@ -1,4 +1,4 @@
-<!DOCTYPE html>
+<?php include 'functions.php'?>
 <html>
 <head>
     <title>Profile de <?php echo $login_session;?></title>

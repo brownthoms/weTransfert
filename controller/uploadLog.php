@@ -1,8 +1,6 @@
 <?php
-
 include '../modele/connectDB.php';
-
-$target_dir = "../files/public/";
+$target_dir = "../files/users/";
 
 $target_file = $target_dir . basename($_FILES["fichier"]["name"]);
 $uploadOk = 1;
@@ -21,17 +19,16 @@ if(isset($_POST["submit"]))
     }
 
 // Verif de la taille
-function taille(){
-    if ($_FILES["fichier"]["size"] > 300000)
+function tailleLog(){
+    if ($_FILES["fichier"]["size"] > 700000)
         {
             echo "Sorry, your file is too large.";
             $uploadOk = 0;
         }
-        header("location: ../index.php");
+        header("location: profile.php");
 
     }
-    taille();
-
+    tailleLog();
 
     // Check si $uploadOk est à 0
     if ($uploadOk == 0)
@@ -43,11 +40,22 @@ function taille(){
         if (move_uploaded_file($_FILES["fichier"]["tmp_name"], $target_file)) {
             $bdd = connectDB();
             $file = $_FILES['fichier']['name'];
-            $heure = date("H:i");
-            $newFile = "INSERT INTO nonlog(file, heure) VALUES ('$file', '$heure')";
+
+
+
+            $id_user = $_SESSION['mail'];
+            $sql="SELECT user.id FROM user
+                  INNER JOIN log.user_id = user.id WHERE mail = '$userName'";
+
+            $resultat=mysqli_query($bdd,$sql);
+            $row=mysqli_fetch_assoc($resultat);
+            $userId = $row['mail'];
+
+
+            $newFile = "INSERT INTO log(user_id, fichier, date) VALUES ('$userId', '$file')";
             $bdd->exec($newFile);
-            echo "The file ". basename( $_FILES["fichier"]["name"]). " has been uploaded.";
-            header("location: ../index.php");
+
+            header("location: ../controller/profile.php");
         } else
         {
             echo "Sorry, there was an error uploading your file.";

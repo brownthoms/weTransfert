@@ -51,29 +51,28 @@
         $bdd = connectDB();
         try{
 			$req = $bdd->query("SELECT fichier, mail
-								FROM `log`
-								INNER JOIN user ON user.id = user_id
+								FROM log
+								INNER JOIN user ON user.id = log.user_id
                                 WHERE user.mail = '$mail'");
-            $reponse = $req->fetch();
-			return $reponse;
+			return $req;
 		}catch (Exception $e) {
 			die("reque error");
 		}
     }
 
 
-    function recupNonLog($bdd){
-        $reponse = $bdd->query('SELECT * FROM nonlog');
-        while ($donnees = $reponse->fetch()) {
-            echo $donnees['id'];
-            echo $donnees['file'];
-        }
+    // function recupNonLog($bdd){
+    //     $reponse = $bdd->query('SELECT * FROM nonlog');
+    //     while ($donnees = $reponse->fetch()) {
+    //         echo $donnees['id'];
+    //         echo $donnees['file'];
+    //     }
+    //
+    // }
 
-    }
-
-    function recupLog($bdd){
-        $reponse = $bdd->query('SELECT * FROM `log`');
-        while ($donnees = $reponse->fetch()){
-            echo $donnees['id'];
-        }
-    }
+    // function recupLog($bdd){
+    //     $reponse = $bdd->query('SELECT * FROM `log`');
+    //     while ($donnees = $reponse->fetch()){
+    //         echo $donnees['id'];
+    //     }
+    // }

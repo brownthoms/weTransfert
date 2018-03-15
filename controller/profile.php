@@ -1,4 +1,4 @@
-<!DOCTYPE html>
+<?php //include 'functions.php'?>
 <html>
     <head>
         <meta charset="utf-8">
@@ -15,7 +15,7 @@
     <?php include '../includes/navuser.php'; ?>
         <div class="container">
 
-            <form class="form-inline" method="post" action="controller/upload.php" enctype="multipart/form-data">
+            <form class="form-inline" method="post" action="uploadLog.php" enctype="multipart/form-data">
                 <div class="">
                     <input type="hidden" name="MAX_FILE_SIZE" value="7000000">
                     <input id='upFile' type="file" name="fichier"></input>
@@ -27,15 +27,22 @@
 
             <div class="jumbotron">
                 <?php
-            
-                echo $_SESSION['mail'];
-                echo  $_SESSION['nom'];
-                ?>
+
+                //session_start();
+                // echo $_SESSION['mail'];
+                // echo  $_SESSION['nom'];
+                $req = afficherFichier($_SESSION['mail']);
+                while ($donnees = $req->fetch()){ ?>
+                    <ul>
+                        <li><?php echo $donnees['fichier']; ?></li>
+                    </ul>
+                <?php } ?>
+
             </div>
         </div>
 
 
 
-        <script type="text/javascript" src="js/bootstrap.bundle.min.js"></script>
+        <script type="text/javascript" src="../js/bootstrap.bundle.min.js"></script>
     </body>
 </html>
