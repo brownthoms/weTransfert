@@ -24,7 +24,7 @@
                 </button>
             </div>
             <div class="modal-body">
-                <form id="contact-form" class="" action="controller/connexion.php" method="post" role="form">
+                <form id="contact-form" class="" action="controller/signIn.php" method="post" role="form">
                     <div class="">
                         <div class="">
                             <label for="mail">Mail :</label>
@@ -57,7 +57,7 @@
                 </button>
             </div>
             <div class="modal-body">
-                <form id="contact-form" class="" action="controller/logintest.php" method="post" role="form">
+                <form id="contact-form" class="" action="controller/signUp.php" method="post" role="form">
                     <div class="">
                         <div class="">
                             <label for="mail">Nom :</label>
