@@ -60,19 +60,20 @@
 		}
     }
 
+    function user_id($mail){
+        $bdd = connectDB();
+        try{
+            $reponse = $bdd->query("SELECT id FROM user WHERE user.mail = '$mail'");
+            $row = $reponse->fetch();
+            $nom = $row['id'];
+            return $nom;
+        }catch(Exception $e){
+            die("request error");
+        }
+    }
 
-    // function recupNonLog($bdd){
-    //     $reponse = $bdd->query('SELECT * FROM nonlog');
-    //     while ($donnees = $reponse->fetch()) {
-    //         echo $donnees['id'];
-    //         echo $donnees['file'];
-    //     }
-    //
-    // }
-
-    // function recupLog($bdd){
-    //     $reponse = $bdd->query('SELECT * FROM `log`');
-    //     while ($donnees = $reponse->fetch()){
-    //         echo $donnees['id'];
-    //     }
-    // }
+    function upload($user_Id, $file){
+        $bdd = connectDB();
+		$req = $bdd->prepare('INSERT INTO log(user_id, fichier) VALUES (?,?)');
+		$req->execute(array($user_Id, $file));
+	}
