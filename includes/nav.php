@@ -1,6 +1,5 @@
 <nav class="navbar navbar-expand-md navbar-dark bg-dark mb-4">
-
-    <a class="navbar-brand" href="#">weTransfert</a>
+    <a class="navbar-brand Kaushan" href="#"><img class="logo"src="vue/images/logo.png" alt="mon logo">eTransfert</a>
     <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarCollapse" aria-controls="navbarCollapse" aria-expanded="false" aria-label="Toggle navigation">
         <span class="navbar-toggler-icon"></span>
     </button>
@@ -66,7 +65,7 @@
                         </div>
                         <div class="">
                             <label for="mail">Mail :</label>
-                            <input type="text" id="mail" name="mail" value="" class="form-control" placeholder="Enter your mail">
+                            <input type="email" id="mail" name="mail" value="" class="form-control" placeholder="Enter your mail">
                             <p class="commantaire"></p>
                         </div>
                         <div class="">
