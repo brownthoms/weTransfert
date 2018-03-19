@@ -9,7 +9,6 @@
         </div>
         <ul class="navbar-nav mr-auto"></ul>
         <form class="form-inline" action="disconnect.php" method="post">
-            <input type="hidden" name="connect" value='<?php $connect = $_SESSION['connect']; echo $connect; ?>'>
             <button type="submit" class="btn btn-danger disco" data-toggle="modal" data-target="#exampleModal1" data-whatever="@getbootstrap">Disconnect</button>
         </form>
     </div>

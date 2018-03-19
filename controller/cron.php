@@ -35,13 +35,13 @@ function selectFileAndDeleteFile($bdd){
 
  // effacer les nom de fichiers dans la BDD Log = User
  function deleteFileFromDBLog($bdd) {
-     $stmt = $bdd->prepare("DELETE FROM `date` WHERE DATEDIFF(CURDATE(), date) < 1");
+     $stmt = $bdd->prepare("DELETE FROM `log` WHERE DATEDIFF(CURDATE(), date) > 1");
      $stmt->execute();
  }
 
  // effacer les fichiers LOG sur le disque
  function selectFileAndDeleteFileLog($bdd){
-      $stmt = $bdd->prepare("SELECT `date` FROM `log` WHERE DATEDIFF(CURDATE(), date) < 1");
+      $stmt = $bdd->prepare("SELECT `date` FROM `log` WHERE DATEDIFF(CURDATE(), date) > 1");
       $stmt->execute();
       $table = array();
 
@@ -49,7 +49,7 @@ function selectFileAndDeleteFile($bdd){
       $i = 0;
 
       while($row = $stmt->fetch()) {
-          $table[$i] = "../files/public/".$row['file'];
+          $table[$i] = "../files/users/".$row['file'];
           unlink($table[$i]);
           $i++;
       }

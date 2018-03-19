@@ -60,7 +60,7 @@
                 <form id="contact-form" class="" action="controller/signUp.php" method="post" role="form">
                     <div class="">
                         <div class="">
-                            <label for="mail">Nom :</label>
+                            <label for="mail">Pseudo :</label>
                             <input type="text" id="nom" name="name" value="" class="form-control" placeholder="Enter your name">
                             <p class="commantaire"></p>
                         </div>
