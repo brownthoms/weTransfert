@@ -15,7 +15,7 @@
                     <input id='upFile' type="file" name="fichier" multiple></input>
                 </div>
                 <div class="text-right mb-2">
-                    <button class="btn btn-outline-success my-2 my-sm-0" type="submit">Upload</button>
+                    <button class="btn btn-success my-2 my-sm-0" type="submit">Upload</button>
                 </div>
             </form>
             <div class="jumbotron">
