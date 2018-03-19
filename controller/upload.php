@@ -3,6 +3,8 @@
 include '../modele/connectDB.php';
 
 $target_dir = "../files/public/";
+
+
 $target_file = $target_dir . basename($_FILES["fichier"]["name"]);
 $uploadOk = 1;
 
