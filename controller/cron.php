@@ -49,7 +49,7 @@ function selectFileAndDeleteFile($bdd){
       $i = 0;
 
       while($row = $stmt->fetch()) {
-          $table[$i] = "../files/public/".$row['file'];
+          $table[$i] = "../files/users/".$row['file'];
           unlink($table[$i]);
           $i++;
       }
