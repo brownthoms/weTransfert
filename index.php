@@ -8,11 +8,14 @@
     </head>
     <body>
         <?php include 'includes/nav.php'; ?>
+        <div class="back">
+
+        </div>
         <div class="container">
-            <form class="form-inline" method="post" action="controller/upload.php" enctype="multipart/form-data">
+            <form class="form-inline onglet" method="post" action="controller/upload.php" enctype="multipart/form-data">
                 <div class="">
                     <input type="hidden" name="MAX_FILE_SIZE" value="3000000">
-                    <input id='upFile' type="file" name="fichier" multiple></input>
+                    <input id='upFile' class="custom-file-upload" type="file" name="fichier" multiple></input>
                 </div>
                 <div class="text-right mb-2">
                     <button class="btn btn-success my-2 my-sm-0" type="submit">Upload</button>

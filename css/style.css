@@ -13,6 +13,43 @@ body{
 .disco{
     margin-top: 15px;
 }
-.navprof{
+.navprof{b
     height: 60px;
 }
+
+.jumbotron{
+    background-color: rgba(196, 189, 203, 0.7);
+    box-shadow: 5px 10px rgba(120, 120, 120,0.8);
+}
+
+.onglet {
+    background-color: grey;
+    border-top-right-radius: 20px;
+    border-top-left-radius: 20px;
+    width: 40%;
+    padding-top: 3px;
+    padding-left: 10px;
+    margin-left: 15px;
+}
+.back {
+  background-image: url(../vue/image/back.jpg);
+  position: absolute;
+  background-repeat: no-repeat;
+  background-position: center;
+  background-size: cover;
+  opacity: 0.4;
+  min-height: 100%;
+  width: 100%;
+  margin-top: -25px;
+  z-index: -2;
+}
+
+#upFile .custom-file-upload input[type='file']{
+      display: none;
+      position: absolute;
+      margin-top: 3px;
+      margin-left: 35px;
+      height: 1px;
+      width: 1px;
+      z-index: -5;
+  }
