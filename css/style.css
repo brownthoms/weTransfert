@@ -108,6 +108,9 @@ body{
 .twitter{
     margin-top: 20px;
 }
+.downloadopen{
+    font-family: sans-serif;
+}
 @media screen and (min-width: 200px) and (max-width: 786px){
     .logo{
         width: 40px;

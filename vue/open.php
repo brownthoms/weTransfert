@@ -12,7 +12,7 @@
                 <script defer src="https://use.fontawesome.com/releases/v5.0.8/js/solid.js" integrity="sha384-+Ga2s7YBbhOD6nie0DzrZpJes+b2K1xkpKxTFFcx59QmVPaSA8c7pycsNaFwUK6l" crossorigin="anonymous"></script>
                 <script defer src="https://use.fontawesome.com/releases/v5.0.8/js/fontawesome.js" integrity="sha384-7ox8Q2yzO/uWircfojVuCQOZl+ZZBg2D2J5nkpLqzH1HY0C1dHlTKIbpRz/LG23c" crossorigin="anonymous"></script>
                 <script type="text/javascript" src="../js/script.js"></script>
-                <?php include 'functions.php';
+                <?php include '../controller/functions.php';
                 ?>
             </head>
             <body>
@@ -22,27 +22,14 @@
                 </div>
                 <div class="container">
 
-                    <form class="form-inline onglet" method="post" action="uploadLog.php" enctype="multipart/form-data">
-                        <div class="">
-                            <input type="hidden" name="MAX_FILE_SIZE" value="7000000">
-                            <input id='upFile' type="file" name="fichier"></input>
-                            <input type="hidden" name="mail" value='<?php $mail = $_SESSION['mail']; echo $mail; ?>'>
-                        </div>
-                        <div class="text-right mb-2 mt-2">
-                            <button class="btn btn-info my-2 my-sm-0" type="submit">Upload</button>
-                        </div>
-                    </form>
+
                     <div class="jumbotron bug">
                         <?php
-                        $nb_files = 0;
-                        //echo "<ul>";
-                        $req = afficherFichier($_SESSION['mail']);
-                        while ($donnees = $req->fetch()){
-                            $nb_files++;
-                            echo '<div class="nomfile">' . $donnees['fichier'] . ' - <a href="../vue/open.php">Open</a> or <a href="../files/users/' . $donnees['fichier'] . '" download="../files/users/' . $donnees['fichier'] . '"> Download</a></div>';
-                        }
-                        echo "<br>";
-                        echo "<strong>$nb_files</strong> file(s) uploaded";
+                        $img = $_POST['postimg'];
+                        echo "<div>" . $img . "</div>";
+                        echo '<img class="text-center" src="../files/users'. $img .'">';
+                        echo '<div class="nomfile text-center"><a href="../files/users/' . $donnees['fichier'] . '" download="../files/users/' . $donnees['fichier'] . '"><button class="btn btn-info downloadopen">Download</button></a></div>';
+
                         ?>
                     </div>
                 </div>
