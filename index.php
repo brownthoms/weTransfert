@@ -27,7 +27,7 @@
                             while(false !== ($fichier = readdir($dossier))) {
                                 if($fichier != '.' && $fichier != '..' && $fichier != 'index.php') {
                                     $nb_fichier++; // On incrémente le compteur de 1
-                                    echo '<div><a class="nomfile" href="files/public/' . $fichier .'">' . $fichier . '</a> - <a href="files/public/' . $fichier . '" download="files/public/' . $fichier . '">Download</a></div>';
+                                    echo '<div class="nomfile" >' . $fichier . ' - <a href="files/public/' . $fichier . '">Open</a> or <a href="files/public/' . $fichier . '" download="files/public/' . $fichier . '">Download</a></div>';
 
                                 } // On ferme le if (qui permet de ne pas afficher index.php, etc.)
                             } // On termine la boucle
