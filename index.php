@@ -15,23 +15,23 @@
                         <input type="hidden" name="MAX_FILE_SIZE" value="3000000">
                         <input id='upFile' type="file" name="fichier"></input>
                     </div>
-                    <div class="text-right mb-2">
-                        <button class="btn btn-success my-2 my-sm-0" type="submit">Upload</button>
+                    <div class="text-right mb-2 mt-2">
+                        <button class="btn btn-info my-2 my-sm-0 " type="submit">Upload</button>
                     </div>
                 </form>
                 <div class="jumbotron">
                     <?php
                         $nb_fichier = 0;
                         $dir = "./files/public";
-                        echo '<ul>';
                         if($dossier = opendir($dir)) {
                             while(false !== ($fichier = readdir($dossier))) {
                                 if($fichier != '.' && $fichier != '..' && $fichier != 'index.php') {
                                     $nb_fichier++; // On incrémente le compteur de 1
-                                    echo '<li><a href="./files/public/' . $fichier . '">' . $fichier . '</a></li>';
+                                    echo '<div><a class="nomfile" href="files/public/' . $fichier .'">' . $fichier . '</a> -<a href="files/public/' . $fichier . '" download="files/public/' . $fichier . '"> Download</a></div>';
+
                                 } // On ferme le if (qui permet de ne pas afficher index.php, etc.)
                             } // On termine la boucle
-                            echo '</ul><br />';
+                            echo '<br />';
                             echo '<strong>' . $nb_fichier .'</strong> file(s) uploaded';
                             closedir($dossier);
                         }
