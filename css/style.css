@@ -1,7 +1,20 @@
 body{
-    background-color: grey;
+    background-image: url("../vue/images/mac-une.jpg");
+    background-repeat: no-repeat;
+    background-position: 50% 50%;
+    background-size: cover;
+    min-height: 100vh;
 }
-
+.jumbotron{
+    background-color: white;
+    background-color: rgba(0,0,0,0.4);
+    font-size: 30px;
+    font-family: "Kaushan Script";
+    color: white;
+}
+a{
+    color: white;
+}
 .name_session{
     color:green;
     font-weight: bolder;
@@ -13,11 +26,11 @@ body{
 .disco{
     margin-top: 15px;
 }
-.navprof{b
+.navprof{
     height: 60px;
 }
 
-.jumbotron{
+.-jumbotron{
     background-color: rgba(196, 189, 203, 0.7);
     box-shadow: 5px 10px rgba(120, 120, 120,0.8);
 }
@@ -26,11 +39,19 @@ body{
     background-color: grey;
     border-top-right-radius: 20px;
     border-top-left-radius: 20px;
-    width: 40%;
+    width: 450px;
     padding-top: 3px;
     padding-left: 10px;
     margin-left: 15px;
+
+  background: rgba(212, 211, 211, 0.23);
+  background-image: -webkit-linear-gradient(top, #decced, #5b52de);
+  background-image: -moz-linear-gradient(top, #decced, #5b52de);
+  background-image: -ms-linear-gradient(top, #decced, #5b52de);
+  background-image: -o-linear-gradient(top, #decced, #5b52de);
+  background-image: linear-gradient(to bottom, rgba(0, 0, 0, 0.5), rgba(121, 116, 121, 0.6));
 }
+
 .back {
   background-image: url(../vue/image/back.jpg);
   position: absolute;
@@ -53,3 +74,17 @@ body{
       width: 1px;
       z-index: -5;
   }
+
+.Kaushan{
+    font-family: "Kaushan Script";
+    font-size: 2em;
+}
+.logo{
+    width: 70px;
+}
+
+@media screen and (min-width: 200px) and (max-width: 786px){
+    .logo{
+        width: 40px;
+    }
+}
