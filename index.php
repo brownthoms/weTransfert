@@ -4,22 +4,22 @@
         <meta charset="utf-8">
         <title>weTransfert</title>
         <?php include 'includes/header.php'; ?>
-        <!-- <script type="text/javascript" src="js/script.js"></script> -->
+        <script type="text/javascript" src="js/script.js"></script>
     </head>
     <body>
         <?php include 'includes/nav.php'; ?>
         <div class="fond-body">
             <div class="container">
-                <form class="form-inline onglet" method="post" action="controller/upload.php" enctype="multipart/form-data">
+                <form class="form-inline col-12 onglet" method="post" action="controller/upload.php" enctype="multipart/form-data">
                     <div class="">
                         <input type="hidden" name="MAX_FILE_SIZE" value="3000000">
-                        <input id='upFile' type="file" name="fichier"></input>
+                        <input id='upFile' class='drag' type="file" name="fichier"></input>
                     </div>
                     <div class="text-right mb-2 mt-2">
                         <button class="btn btn-info my-2 my-sm-0 " type="submit">Upload</button>
                     </div>
                 </form>
-                <div class="jumbotron">
+                <div class="jumbotron zone" ondrop="drop(event)" ondragover="allowDrop(event)" ondragover="allowDrop(event)">
                     <?php
                         $nb_fichier = 0;
                         $dir = "./files/public";
