@@ -38,10 +38,14 @@
                             closedir($dossier);
                         }
                     ?>
-
+                    <div class="twitter">
+                        <a href="http://twitter.com/share" class="twitter-share-button" data-count="vertical">Share</a>
+                    </div>
                 </div>
             </div>
         </div>
+        <script src="http://static.ak.fbcdn.net/connect.php/js/FB.Share" type="text/javascript"></script>
+        <script type="text/javascript" src="http://platform.twitter.com/widgets.js"></script>
         <script type="text/javascript" src="js/bootstrap.bundle.min.js"></script>
     </body>
 </html>
