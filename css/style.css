@@ -15,12 +15,28 @@ body{
 .nomfile{
     color: white;
 }
+
 .nomfile:hover{
     text-decoration: none;
     color:green;
     background-image: linear-gradient(to bottom, rgba(121, 116, 121, 0.6), rgba(0, 0, 0, 0.5));
     border-radius: 20px;
     padding : 5px;
+}
+
+.download {
+    color: pinkrgb(0, 186, 255);
+}
+.download:hover{
+    text-decoration: none;
+    color:cyan;
+    background-image: linear-gradient(to bottom, rgba(121, 116, 121, 0.6), rgba(0, 0, 0, 0.5));
+    border-radius: 20px;
+    padding : 5px;
+}
+
+.open{
+    color:rgb(50, 210, 11);
 }
 
 .bug{
