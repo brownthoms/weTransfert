@@ -4,12 +4,13 @@ body{
     background-position: 50% 50%;
     background-size: cover;
     min-height: 100vh;
-    font-family: "Kaushan Script";
+    overflow-x: hidden;
 }
 .jumbotron{
     background-color: rgba(0,0,0,0.4);
     font-size: 25px;
     color: white;
+    font-family: "Kaushan Script";
 }
 .nomfile{
     color: white;
@@ -46,11 +47,6 @@ body{
     padding-top: 3px;
     padding-left: 10px;
     margin-left: 5px;
-    /* background-image: -webkit-linear-gradient(top, #decced, #5b52de);
-    background-image: -moz-linear-gradient(top, #decced, #5b52de);
-    background-image: -ms-linear-gradient(top, #decced, #5b52de);
-    background-image: -o-linear-gradient(top, #decced, #5b52de);
-    background-image: linear-gradient(to bottom, rgba(0, 0, 0, 0.5), rgba(121, 116, 121, 0.6)); */
 }
 
 
@@ -85,7 +81,9 @@ body{
 .logo{
     width: 70px;
 }
-
+.twitter{
+    margin-top: 20px;
+}
 @media screen and (min-width: 200px) and (max-width: 786px){
     .logo{
         width: 40px;

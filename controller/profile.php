@@ -17,7 +17,7 @@
             </head>
             <body>
             <?php include '../includes/navuser.php'; ?>
-                <div class="text-center mb-5">
+                <div class="text-center mb-5 Kaushan">
                     <span class="texte">Bienvenue </span><span class="name_session"><?php echo $_SESSION['nom']; ?></span>
                 </div>
                 <div class="container">

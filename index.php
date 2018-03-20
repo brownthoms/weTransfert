@@ -27,7 +27,7 @@
                             while(false !== ($fichier = readdir($dossier))) {
                                 if($fichier != '.' && $fichier != '..' && $fichier != 'index.php') {
                                     $nb_fichier++; // On incrémente le compteur de 1
-                                    echo '<div><a class="nomfile" href="files/public/' . $fichier .'">' . $fichier . '</a> -<a href="files/public/' . $fichier . '" download="files/public/' . $fichier . '"> Download</a></div>';
+                                    echo '<div><a class="nomfile" href="files/public/' . $fichier .'">' . $fichier . '</a> - <a href="files/public/' . $fichier . '" download="files/public/' . $fichier . '">Download</a></div>';
 
                                 } // On ferme le if (qui permet de ne pas afficher index.php, etc.)
                             } // On termine la boucle
@@ -36,10 +36,14 @@
                             closedir($dossier);
                         }
                     ?>
-
+                    <div class="twitter">
+                        <a href="http://twitter.com/share" class="twitter-share-button" data-count="vertical">Share</a>
+                    </div>
                 </div>
             </div>
         </div>
+        <script src="http://static.ak.fbcdn.net/connect.php/js/FB.Share" type="text/javascript"></script>
+        <script type="text/javascript" src="http://platform.twitter.com/widgets.js"></script>
         <script type="text/javascript" src="js/bootstrap.bundle.min.js"></script>
     </body>
 </html>
