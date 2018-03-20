@@ -7,36 +7,41 @@
                 <title>weTransfert</title>
                 <link rel="stylesheet" href="../css/bootstrap.min.css">
                 <link rel="stylesheet" href="../css/style.css">
+                <link href='http://fonts.googleapis.com/css?family=Kaushan Script' rel='stylesheet' type='text/css'>
                 <script src="https://code.jquery.com/jquery-3.2.1.min.js"></script>
-                <script defer src="https://use.fontawesome.com/releases/v5.0.7/js/all.js"></script>
+                <script defer src="https://use.fontawesome.com/releases/v5.0.8/js/solid.js" integrity="sha384-+Ga2s7YBbhOD6nie0DzrZpJes+b2K1xkpKxTFFcx59QmVPaSA8c7pycsNaFwUK6l" crossorigin="anonymous"></script>
+                <script defer src="https://use.fontawesome.com/releases/v5.0.8/js/fontawesome.js" integrity="sha384-7ox8Q2yzO/uWircfojVuCQOZl+ZZBg2D2J5nkpLqzH1HY0C1dHlTKIbpRz/LG23c" crossorigin="anonymous"></script>
                 <script type="text/javascript" src="../js/script.js"></script>
                 <?php include 'functions.php';
                 ?>
             </head>
             <body>
             <?php include '../includes/navuser.php'; ?>
+                <div class="text-center mb-5">
+                    <span class="texte">Bienvenue </span><span class="name_session"><?php echo $_SESSION['nom']; ?></span>
+                </div>
                 <div class="container">
 
-                    <form class="form-inline" method="post" action="uploadLog.php" enctype="multipart/form-data">
+                    <form class="form-inline onglet" method="post" action="uploadLog.php" enctype="multipart/form-data">
                         <div class="">
                             <input type="hidden" name="MAX_FILE_SIZE" value="7000000">
                             <input id='upFile' type="file" name="fichier"></input>
                             <input type="hidden" name="mail" value='<?php $mail = $_SESSION['mail']; echo $mail; ?>'>
                         </div>
                         <div class="text-right mb-2 mt-2">
-                            <button class="btn btn-outline-success my-2 my-sm-0" type="submit">Upload</button>
+                            <button class="btn btn-info my-2 my-sm-0" type="submit">Upload</button>
                         </div>
                     </form>
-                    <div class="jumbotron">
+                    <div class="jumbotron bug">
                         <?php
                         $nb_files = 0;
-                        echo "<ul>";
+                        //echo "<ul>";
                         $req = afficherFichier($_SESSION['mail']);
                         while ($donnees = $req->fetch()){
                             $nb_files++;
-                            echo '<li><a href="../files/users/' . $donnees['fichier'] . '">' . $donnees['fichier'] . '</a></li>';
+                            echo '<div><a class="nomfile" href="../files/users/' . $donnees['fichier'] .'">' . $donnees['fichier'] . '</a> -<a href="../files/users/' . $donnees['fichier'] . '" download="../files/users/' . $donnees['fichier'] . '"> Download</a></div>';
                         }
-                        echo "</ul><br>";
+                        echo "<br>";
                         echo "<strong>$nb_files</strong> file(s) uploaded";
                         ?>
                     </div>

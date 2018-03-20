@@ -1,5 +1,5 @@
-<nav class="navbar navbar-expand-md navbar-dark bg-dark mb-4">
-    <a class="navbar-brand Kaushan" href="#"><img class="logo"src="vue/images/logo.png" alt="mon logo">eTransfert</a>
+<nav class="navbar navbar-expand-md mb-4">
+    <span class="navbar-brand Kaushan" href="#"><img class="logo"src="vue/images/logo.png" alt="mon logo">eTransfert</span>
     <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarCollapse" aria-controls="navbarCollapse" aria-expanded="false" aria-label="Toggle navigation">
         <span class="navbar-toggler-icon"></span>
     </button>
