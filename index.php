@@ -28,7 +28,7 @@
                                 if($fichier != '.' && $fichier != '..' && $fichier != 'index.php') {
                                     $nb_fichier++; // On incrémente le compteur de 1
 
-                                    echo '<div><a class="nomfile" href="files/public/' . $fichier .'">' . $fichier . ' - <span class="open">Open</span></a> -<a href="files/public/' . $fichier . '"download="files/public/' . $fichier . '"><span class="download">Download</span></a></div>';
+                                    echo '<div>' . $fichier . ' - <a class="nomfile" href="files/public/' . $fichier .'"><span class="open">Open</span></a> or <a href="files/public/' . $fichier . '"download="files/public/' . $fichier . '"><span class="download">Download</span></a></div>';
 
 
                                 } // On ferme le if (qui permet de ne pas afficher index.php, etc.)
@@ -38,9 +38,6 @@
                             closedir($dossier);
                         }
                     ?>
-                    <div class="twitter">
-                        <a href="http://twitter.com/share" class="twitter-share-button" data-count="vertical">Share</a>
-                    </div>
                 </div>
             </div>
         </div>
