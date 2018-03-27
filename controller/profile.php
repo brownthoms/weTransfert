@@ -18,7 +18,7 @@
             <body>
             <?php include '../includes/navuser.php'; ?>
                 <div class="text-center mb-5 Kaushan">
-                    <span class="texte">Welcome </span><span class="name_session"><?php echo $_SESSION['nom']; ?></span>,
+                    <span class="texte">Welcome </span><span class="name_session"><?php echo $_SESSION['nom']; ?></span>
                 </div>
                 <div class="container">
 
@@ -39,7 +39,8 @@
                         $req = afficherFichier($_SESSION['mail']);
                         while ($donnees = $req->fetch()){
                             $nb_files++;
-                            echo '<div class="nomfile">' . $donnees['fichier'] . ' - <a class="open" href="../files/users/' . $donnees['fichier'] . '">Open</a> or <a href="../files/users/' . $donnees['fichier'] . '" download="../files/users/' . $donnees['fichier'] . '"> Download</a></div>';
+
+                            echo '<div><a class="nomfile" href="../files/users/' . $donnees['fichier'] .'">' . $donnees['fichier'] . ' - <span class="open">Open</span></a> -<a href="../files/users/' . $donnees['fichier'] . '"download="../files/users/' . $donnees['fichier'] . '"><span class="download">Download</span></a></div>';
                         }
                         echo "<br>";
                         echo "<strong>$nb_files</strong> file(s) uploaded";
